@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <script src="https://kit.fontawesome.com/bca234a245.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="images/logo.svg" alt="logo of a company named snap">
+      </div>
+      <nav class="nav">
+        <!-- <ul class="nav-list">
+          <li class="nav-item"></li>
+          <li class="nav-item"></li>
+          <li class="nav-item"></li>
+          <li class="nav-item"></li>
+        </ul> -->
+        <i class="fas fa-bars"></i>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
+      </nav>
+    </header>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <main class="hero">
 
-  Features
-  Company
-  Careers
-  About
+      <div class="hero-background">
+        <img src="images/image-hero-mobile.png" alt="a person holding a laptop" id="hero-bg-img">
+      </div>
 
-  Login
-  Register
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Make remote work
+        </h1>
+        <p class="hero-description">
+          Get your team in sync, no matter your location.
+          Streamline processes, create team rituals, and watch productivity soar.
+        </p>
+        <button class="hero-btn">
+          Learn more
+        </button>
+      </div>
+      
+    </main>
 
-  Make remote work
+    <footer class="footer">
+      <ul class="clients">
+        <li class="client">
+          <img src="images/databiz.svg" alt="">
+        </li>
+        <li class="client">
+          <img src="images/audiophile.svg" alt="">
+        </li>
+        <li class="client">
+          <img src="images/meet.svg" alt="">
+        </li>
+        <li class="client">
+          <img src="images/maker.svg" alt="">
+        </li>
+      </ul>
+    </footer>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <script src="js/index.js"></script>
+  </body>
 </html>
