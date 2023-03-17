@@ -16,16 +16,83 @@
       <div class="logo">
         <img src="images/logo.svg" alt="logo of a company named snap">
       </div>
-      <nav class="nav">
-        <!-- <ul class="nav-list">
-          <li class="nav-item"></li>
-          <li class="nav-item"></li>
-          <li class="nav-item"></li>
-          <li class="nav-item"></li>
-        </ul> -->
-        <i class="fas fa-bars"></i>
 
+      <i class="fas fa-bars hamburger" id="menu-btn"></i>
+
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+
+          <li class="nav-item" id="features">
+            <a href="#" class="nav-link" id="features-link">
+              Features
+              <i class="fa-solid fa-chevron-down arrow-down-icon"></i>
+            </a>
+
+            <ul class="features-list" id="features-list">
+              <li class="feature">
+                <a href="#" class="feature-link">
+                  <i class="fa-solid fa-table-list feature-icon feature-icon-todo"></i>
+                  <p class="feature-name">Todo List</p>
+                </a>
+              </li>
+
+              <li class="feature">
+                <a href="#" class="feature-link">
+                  <i class="fa-regular fa-calendar-days feature-icon feature-icon-calendar"></i>
+                  <p class="feature-name">Calendar</p>
+                </a>
+
+              </li>
+
+              <li class="feature">
+                <a href="#" class="feature-link">
+                  <i class="fa-solid fa-bell feature-icon feature-icon-reminders"></i>
+                  <p class="feature-name">Reminders</p>
+                </a>
+                
+              </li>
+              <li class="feature">
+                <a href="#" class="feature-link">
+                  <i class="fa-solid fa-clock feature-icon feature-icon-planning"></i>
+                  <p class="feature-name">Planning</p>
+                </a>
+                
+              </li>
+            </ul>
+
+          </li>
+
+          <li class="nav-item" id="company">
+            <a href="#" class="nav-link" id="company-link">
+              Company
+              <i class="fa-solid fa-chevron-down arrow-down-icon"></i>
+            </a>
+            <ul class="company-list" id="company-list">
+              <li class="company-info">
+                <a href="#">History</a>
+              </li>
+              <li class="company-info">
+                <a href="#">Our Team</a>
+              </li>
+              <li class="company-info">
+                <a href="#">Blog</a>
+              </li>
+            </ul>
+
+          </li>
+
+          <li class="nav-item" id="company">
+            <a href="#" class="nav-link">Careers</a>
+          </li>
+
+          <li class="nav-item" id="about">
+            <a href="#" class="nav-link">About</a>
+          </li>
+
+        </ul>
       </nav>
+
+
     </header>
 
     <main class="hero">
@@ -52,16 +119,16 @@
     <footer class="footer">
       <ul class="clients">
         <li class="client">
-          <img src="images/databiz.svg" alt="">
+          <img src="images/client-databiz.svg" alt="">
         </li>
         <li class="client">
-          <img src="images/audiophile.svg" alt="">
+          <img src="images/client-audiophile.svg" alt="">
         </li>
         <li class="client">
-          <img src="images/meet.svg" alt="">
+          <img src="images/client-meet.svg" alt="">
         </li>
         <li class="client">
-          <img src="images/maker.svg" alt="">
+          <img src="images/client-maker.svg" alt="">
         </li>
       </ul>
     </footer>

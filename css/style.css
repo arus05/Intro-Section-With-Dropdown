@@ -21,6 +21,7 @@
 
   --clr-white: #fafafa;
   --clr-grey: #696969;
+  --clr-grey-light: #f1f0f0;
   --clr-dark: #141414;
   --clr-accent: rgb(26, 87, 95);
 
@@ -29,7 +30,19 @@
   --space-lg: 2em;
   --space-xl: 4em;
   --space-xxl: 7em;
+
+  --bs-1: 2px 2px 15px #a3a3a3;
 }
+
+@media all and (min-width: 800px){
+  :root{
+    --fs-h1: 4rem;
+    --fs-h2: 2.25rem;
+    --fs-body: 1.25rem;
+    --fs-sm: 0.85rem;
+  }
+}
+
 
 /* General Styles */
 body{
@@ -38,12 +51,12 @@ body{
   background: var(--clr-white);
   color: var(--clr-dark);
   font-family: var(--ff-primary);
+  min-height: 100vh;
 }
 
 img{
   display: block;
   max-width: 100%;
-  margin: 0 auto;
 }
 
 a,
@@ -53,11 +66,14 @@ button{
 
 a{
   text-decoration: none;
-  color: var(--clr-dark);
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 button{
   border: none;
+  cursor: pointer;
 }
 
 h1,
@@ -74,15 +90,270 @@ p{
 }
 
 :focus {
-  outline: 3px solid var(--clr-accent);
-  outline-offset: 3px;
+  outline: none;
+  /* outline: 3px solid var(--clr-accent);
+  outline-offset: 3px; */
 }
 
 /* Class Styles */
 
 /* Header */
 .header{
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xl);
+  padding-left: var(--space-xl);
+}
+
+.hamburger{
+  font-size: var(--fs-h2);
+  cursor: pointer;
+  position: fixed;
+  top: var(--space-md);
+  right: 50px;
+  z-index: 100;
+}
+
+.hamburger:hover{
+  color: var(--clr-grey);
+}
+
+.nav{
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 45vw;
+  background: var(--clr-white);
+  height: 100vh;
+  transition: transform 250ms ease;
+}
+
+.toggled.nav{
+  transform: translateX(-100%);
+}
+
+.nav-list{
+  list-style: none;
+  margin-top: var(--space-xxl);
+  /* margin-left: var(--space-xl); */
+  padding-left: 0;
+  color: var(--clr-dark);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+}
+
+.nav-item{
+  padding: 0;
+  margin-left: 0;
+  margin-bottom: var(--space-md);
+}
+
+.nav-link{
+  margin-left: var(--space-xl);
+  cursor: pointer;
+  transition: color 250ms ease;
+  position: relative;
+}
+
+.nav-link::after{
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scale(0);
+  height: 2px;
+  bottom: -10px;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.nav-link:hover{
+  color: var(--clr-grey);
+}
+
+.arrow-down-icon{
+  font-size: var(--fs-sm);
+  padding-left: 5px;
+}
+
+#features{
+  position: relative;
+}
+
+.features-list{
+  font-size: var(--fs-sm);
+  border-radius: 0.5rem; 
+  list-style: none;
+  padding: var(--space-md) 0;
   display: none;
+}
+
+.features-toggled.features-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.feature{
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  padding-left: var(--space-xl);
+}
+
+.feature:hover{
+  background: var(--clr-grey-light);
+}
+
+.feature-link{
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.feature-name{
+  margin: 0;
+  color: var(--clr-grey);
+}
+
+.feature-icon{
+  font-size: 1.25rem;
+}
+
+.feature-icon-todo{
+  color: rgb(160, 160, 235);
+}
+
+.feature-icon-calendar{
+  color: rgb(109, 174, 218);
+}
+
+.feature-icon-reminders{
+  color: rgb(238, 184, 121);
+}
+
+.feature-icon-planning{
+  color: rgb(85, 22, 94);
+}
+
+#company{
+  position: relative;
+}
+
+.company-list{
+  list-style: none;
+  padding: var(--space-md) 0;
+  display: none;
+}
+
+.company-toggled.company-list{
+  display: block;
+}
+
+.company-info{
+  font-size: 1rem;
+  font-weight: var(--fw-bold);
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  padding-left: 6rem;
+  color: var(--clr-grey);
+}
+
+.company-info:hover{
+  background: var(--clr-grey-light);
+}
+
+@media all and (min-width: 800px){
+  .hamburger{
+    display: none;
+  }
+
+  .header{
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xxl);
+  }
+
+  .nav{
+    position: static;
+    width: auto;
+    height: auto;
+    transform: translate(0%);
+  }
+
+  .nav-list{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: var(--space-lg);
+  }
+
+  .nav-item{
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-link{
+    padding: 0;
+    margin: 0;
+  }
+
+  .features-list{
+    display: none;
+  }
+  
+  .features-toggled.features-list{
+    position: absolute;
+    right: 0%;
+    top: 45px;
+    font-size: var(--fs-sm);
+    background: white;
+    box-shadow: var(--bs-1);
+    border-radius: 0.5rem; 
+    list-style: none;
+    padding: var(--space-md) 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature{
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    padding: var(--space-sm) var(--space-lg);
+  }
+
+  .company-list{
+    display: none;
+  }
+
+  .company-toggled.company-list{
+    position: absolute;
+    right: 0%;
+    top: 45px;
+    font-size: var(--fs-sm);
+    background: white;
+    box-shadow: var(--bs-1);
+    border-radius: 0.5rem; 
+    list-style: none;
+    padding: var(--space-md) 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .company-info{
+    font-size: 1rem;
+    font-weight: var(--fw-bold);
+    padding: var(--space-sm) var(--space-lg);
+    white-space: nowrap;
+  }
+  
 }
 
 /* Main/Hero */
@@ -114,6 +385,13 @@ p{
   border-radius: 1rem;
   font-size: 0.9rem;
   font-weight: var(--fw-medium);
+  border: 2px solid black;
+  transition: all 200ms ease-in-out;
+}
+
+.hero-btn:hover{
+  background-color: var(--clr-white);
+  color: var(--clr-dark);
 }
 
 @media all and (min-width: 800px){
@@ -124,10 +402,26 @@ p{
     gap: var(--space-xl);
     padding: 0 10em;
     text-align: left;
-    max-width: 1200px;
+    max-width: 1500px;
   }
 
   .hero-background{
     margin: 0;
+  }
+}
+
+/* Footer */
+.clients{
+  margin-top: var(--space-xl);
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media all and (min-width: 800px){
+  .clients{
+    max-width: 1500px;
   }
 }
