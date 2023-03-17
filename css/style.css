@@ -321,6 +321,7 @@ p{
     padding: var(--space-md) 0;
     display: flex;
     flex-direction: column;
+    --animate-duration: 300ms;
   }
 
   .feature{
@@ -345,6 +346,7 @@ p{
     padding: var(--space-md) 0;
     display: flex;
     flex-direction: column;
+    --animate-duration: 300ms;
   }
 
   .company-info{
