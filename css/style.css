@@ -34,7 +34,7 @@
   --bs-1: 2px 2px 15px #a3a3a3;
 }
 
-@media all and (min-width: 800px){
+@media all and (min-width: 1200px){
   :root{
     --fs-h1: 4rem;
     --fs-h2: 2.25rem;
@@ -72,6 +72,7 @@ a{
 }
 
 button{
+  display: block;
   border: none;
   cursor: pointer;
 }
@@ -104,6 +105,10 @@ p{
   padding-left: var(--space-xl);
 }
 
+.logo{
+  flex-shrink: 0;
+}
+
 .hamburger{
   font-size: var(--fs-h2);
   cursor: pointer;
@@ -120,8 +125,9 @@ p{
 .nav{
   position: fixed;
   top: 0;
-  right: -50%;
-  width: 45vw;
+  left: 100%;
+  padding-right: var(--space-md);
+  min-width: 45vw;
   background: var(--clr-white);
   height: 100vh;
   transition: transform 250ms ease;
@@ -134,11 +140,11 @@ p{
 .nav-list{
   list-style: none;
   margin-top: var(--space-xxl);
-  /* margin-left: var(--space-xl); */
   padding-left: 0;
   color: var(--clr-dark);
   font-size: var(--fs-body);
   font-weight: var(--fw-medium);
+  margin-bottom: var(--space-xl);
 }
 
 .nav-item{
@@ -152,6 +158,14 @@ p{
   cursor: pointer;
   transition: color 250ms ease;
   position: relative;
+  display: flex;
+  align-items: center;
+  width: min-content;
+  transition: transform 500ms ease-in-out;
+}
+
+.nav-link:hover{
+  transform: translateX(30px);
 }
 
 .nav-link::after{
@@ -174,6 +188,11 @@ p{
 
 .nav-link:hover{
   color: var(--clr-grey);
+}
+
+.link-title{
+  margin: 0;
+  padding: 0;
 }
 
 .arrow-down-icon{
@@ -268,7 +287,40 @@ p{
   background: var(--clr-grey-light);
 }
 
-@media all and (min-width: 800px){
+.registration{
+  margin-left: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.login-btn, .register-btn{
+  background: transparent;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  padding: 0;
+  transition: opacity 200ms ease-in-out, transform 500ms ease-in-out, 
+              background 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+.login-btn:hover{
+  transform: translateY(-7px);
+  opacity: 0.5;
+}
+
+.register-btn{
+  border: 2px solid black;
+  padding: var(--space-sm);
+  border-radius: 1.25rem;
+}
+
+.register-btn:hover{
+  transform: translateY(-7px);
+  background: var(--clr-dark);
+  color: var(--clr-white);
+}
+
+@media all and (min-width: 900px){
   .hamburger{
     display: none;
   }
@@ -282,9 +334,14 @@ p{
 
   .nav{
     position: static;
-    width: auto;
+    width: 100%;
     height: auto;
     transform: translate(0%);
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    padding-right: var(--space-xl);
+    justify-content: space-between;
   }
 
   .nav-list{
@@ -303,6 +360,10 @@ p{
   .nav-link{
     padding: 0;
     margin: 0;
+  }
+
+  .nav-link:hover{
+    transform: translateY(-7px);
   }
 
   .features-list{
@@ -389,6 +450,7 @@ p{
   font-weight: var(--fw-medium);
   border: 2px solid black;
   transition: all 200ms ease-in-out;
+  margin: 0 auto;
 }
 
 .hero-btn:hover{
@@ -396,7 +458,7 @@ p{
   color: var(--clr-dark);
 }
 
-@media all and (min-width: 800px){
+@media all and (min-width: 900px){
   .hero{
     display: flex;
     flex-direction: row-reverse;
@@ -409,6 +471,10 @@ p{
 
   .hero-background{
     margin: 0;
+  }
+
+  .hero-btn{
+    margin-left: 0;
   }
 }
 

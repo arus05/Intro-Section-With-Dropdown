@@ -6,8 +6,8 @@ const featuresList = document.getElementById("features-list");
 const companyNav = document.getElementById("company-link");
 const companyList = document.getElementById("company-list");
 
-function handleQuery800(){
-  if(window.matchMedia("(min-width: 800px)").matches){
+function handleQuery900(){
+  if(window.matchMedia("(min-width: 900px)").matches){
     heroBgImg.src = "./../images/image-hero-desktop.png";
   }
   else{
@@ -17,7 +17,7 @@ function handleQuery800(){
   nav.classList.remove("toggled");
 }
 
-window.matchMedia("(min-width: 800px)").addListener(handleQuery800);
+window.matchMedia("(min-width: 900px)").addListener(handleQuery900);
 
 menuBtn.addEventListener("click", ()=>{
   nav.classList.toggle("toggled");
